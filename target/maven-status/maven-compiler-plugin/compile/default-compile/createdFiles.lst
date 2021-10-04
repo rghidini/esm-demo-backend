@@ -1,4 +1,5 @@
 com/example/demo/DemoApplication.class
 com/example/demo/service/ListService.class
 com/example/demo/service/implementation/ListServiceImpl.class
+com/example/demo/controller/ListController.class
 com/example/demo/DemoApplication$1.class

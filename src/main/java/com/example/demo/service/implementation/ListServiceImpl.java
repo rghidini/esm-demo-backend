@@ -3,13 +3,20 @@ package com.example.demo.service.implementation;
 import com.example.demo.service.ListService;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 @Service
 public class ListServiceImpl implements ListService {
     @Override
-    public List<Integer> sortList(List<Integer> listToBeSorted) {
-        return listToBeSorted.stream().sorted(Integer::compare).collect(Collectors.toList());
+    public Integer[] sortList(Integer[] listToBeSorted) {
+        for(int i = 0; i < listToBeSorted.length; i++) {
+            for(int j = i + 1; j < listToBeSorted.length; j++) {
+                final var tempI= listToBeSorted[i];
+                final var tempJ= listToBeSorted[j];
+                if(tempI > tempJ) {
+                    listToBeSorted[i]=tempJ;
+                    listToBeSorted[j]= tempI;
+                }
+            }
+        }
+        return listToBeSorted;
     }
 }
